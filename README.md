@@ -25,7 +25,7 @@ Helps using aws cli with MFA token
 }
 ``` 
 
-Similar to build in `AdministratoAccess` policy but with MFA requirement. 
+Similar to build in `AdministratoAccess` policy but it requires MFA for all actions. 
 
 ### Usage example
 ```
