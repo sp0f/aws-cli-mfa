@@ -2,7 +2,7 @@
 Helps using aws cli with MFA token
 
 ## Description
-- it use [default] credentials saved in ~/.aws/credentials go obtain temporary MFA protected credentials
+- it use `[default]` credentials saved (by default) in ~/.aws/credentials go obtain temporary MFA protected credentials
 - it allows you to use more privileged/destructive API calls in a more secure manner: without keeping hi privileged plan text credentials on your machine. 
 - it generate new profile with default name `mfa`
 
@@ -100,3 +100,7 @@ $ aws ec2 describe-regions --profile=mfa
 }
 ```
 
+## Documentation
+- http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html#MFAProtectedAPI-user-mfa
+- https://boto3.readthedocs.io/en/latest/reference/services/sts.html#STS.Client.get_session_token
+- http://boto3.readthedocs.io/en/latest/guide/configuration.html
