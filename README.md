@@ -2,8 +2,8 @@
 Helps using aws cli with MFA token
 
 ## Description
-- it use `[default]` credentials saved (by default) in ~/.aws/credentials go obtain temporary MFA protected credentials
-- it allows you to use more privileged/destructive API calls in a more secure manner: without keeping hi privileged plan text credentials on your machine. 
+- it use `[default]` credentials saved (by default) in ~/.aws/credentials to obtain temporary MFA protected credentials
+- it allows you to use more privileged/destructive API calls in a more secure manner: without keeping hi privileged plain text credentials on your machine
 - it generate new profile with default name `mfa`
 
 ### Example IAM Policy

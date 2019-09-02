@@ -41,6 +41,7 @@ except botocore.exceptions.ClientError as err:
     else:
         raise err
 
+# parse ~/.aws/config
 
 # update ~/.aws/credentials
 config = configparser.ConfigParser()
