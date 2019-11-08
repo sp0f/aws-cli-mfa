@@ -9,6 +9,9 @@ token_duration=32400
 aws_config_path=os.path.expanduser("~/.aws/credentials")
 mfa_profile_name="mfa"
 
+# unse previously set AWS_PROFILE system variable
+del os.environ['AWS_PROFILE']
+
 # get user data
 sts_client = boto3.client('sts')
 callerIdentity = sts_client.get_caller_identity()
@@ -60,3 +63,5 @@ with open(aws_config_path, 'r+') as configfile:
         config.set(mfa_profile_name,"aws_secret_access_key",credentials["Credentials"]["SecretAccessKey"])
         config.set(mfa_profile_name,"aws_session_token",credentials["Credentials"]["SessionToken"])
         config.write(configfile)
+
+os.system('export AWS_PROFILE="mfa"')
