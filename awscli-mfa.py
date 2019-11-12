@@ -10,7 +10,10 @@ aws_config_path=os.path.expanduser("~/.aws/credentials")
 mfa_profile_name="mfa"
 
 # unse previously set AWS_PROFILE system variable
-del os.environ['AWS_PROFILE']
+try:
+    del os.environ['AWS_PROFILE']
+except KeyError:
+    pass
 
 # get user data
 sts_client = boto3.client('sts')
@@ -64,4 +67,3 @@ with open(aws_config_path, 'r+') as configfile:
         config.set(mfa_profile_name,"aws_session_token",credentials["Credentials"]["SessionToken"])
         config.write(configfile)
 
-os.system('export AWS_PROFILE="mfa"')
